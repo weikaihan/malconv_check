@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能恶意软件分析平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-800 font-sans">
+
+    <div class="max-w-4xl mx-auto py-12 px-4">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-blue-900 mb-2">智能恶意软件静态分析平台</h1>
+            <p class="text-gray-500">基于 MalConv 深度学习特征与大语言模型智能评估</p>
+        </header>
+
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
+            <div class="flex items-center justify-center w-full">
+                <label for="file-upload" class="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-blue-300 rounded-lg cursor-pointer bg-blue-50 hover:bg-blue-100 transition">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                        <svg class="w-10 h-10 mb-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                        <p class="mb-2 text-sm text-gray-600"><span class="font-semibold text-blue-600">点击选择文件</span> 或拖拽文件至此</p>
+                        <p class="text-xs text-gray-500" id="file-name-display">支持 PE 可执行文件 (.exe, .dll)</p>
+                    </div>
+                    <input id="file-upload" type="file" class="hidden" onchange="handleFileSelect(event)" />
+                </label>
+            </div>
+            <div class="mt-4 text-center">
+                <button onclick="uploadFile()" id="upload-btn" class="px-6 py-2.5 bg-blue-600 text-white font-medium text-sm rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 disabled:bg-gray-400 disabled:cursor-not-allowed transition" disabled>
+                    开始智能分析
+                </button>
+            </div>
+        </div>
+
+        <div id="status-container" class="hidden text-center mb-8">
+            <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-blue-800 bg-blue-100 transition ease-in-out duration-150">
+                <svg id="loading-spinner" class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span id="status-text">系统正在初始化...</span>
+            </div>
+        </div>
+
+        <div id="result-container" class="hidden bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="bg-gray-50 border-b border-gray-100 p-6 flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800">底层模型检出率 (MalConv)</h3>
+                    <p class="text-sm text-gray-500">基于深度学习的原始字节静态分析</p>
+                </div>
+                <div class="text-right">
+                    <span id="score-display" class="text-3xl font-black text-green-600">0.000</span>
+                    <span class="text-sm text-gray-500 ml-1">/ 1.0</span>
+                </div>
+            </div>
+            
+            <div class="p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    专家智能评估报告
+                </h3>
+                <div id="report-content" class="prose prose-blue max-w-none text-gray-700">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = "http://127.0.0.1:8000/api/v1";
+        let selectedFile = null;
+        let pollInterval = null;
+
+        // 监听文件选择
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedFile = file;
+                document.getElementById('file-name-display').innerText = `已选择: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+                document.getElementById('file-name-display').classList.add('text-blue-600', 'font-medium');
+                document.getElementById('upload-btn').disabled = false;
+            }
+        }
+
+        // 上传文件并触发分析
+        async function uploadFile() {
+            if (!selectedFile) return;
+
+            // UI 状态切换
+            document.getElementById('upload-btn').disabled = true;
+            document.getElementById('result-container').classList.add('hidden');
+            document.getElementById('status-container').classList.remove('hidden');
+            document.getElementById('status-text').innerText = "正在上传文件与计算 Hash...";
+            document.getElementById('loading-spinner').classList.remove('hidden');
+
+            const formData = new FormData();
+            formData.append("file", selectedFile);
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/analyze`, {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+
+                if (data.sample_id) {
+                    document.getElementById('status-text').innerText = "文件已接收，流水线处理中...";
+                    // 开始轮询后端状态
+                    startPolling(data.sample_id);
+                } else {
+                    showError("上传失败：" + JSON.stringify(data));
+                }
+            } catch (error) {
+                showError("网络错误：" + error.message);
+            }
+        }
+
+        // 轮询后端状态
+        function startPolling(sampleId) {
+            // 每隔 2 秒请求一次后端
+            pollInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/status/${sampleId}`);
+                    const data = await response.json();
+
+                    if (data.status === "analyzing") {
+                        document.getElementById('status-text').innerText = "底层模型推演中... 大模型正在撰写报告...";
+                    } 
+                    else if (data.status === "completed") {
+                        clearInterval(pollInterval);
+                        document.getElementById('status-text').innerText = "分析完成！";
+                        document.getElementById('loading-spinner').classList.add('hidden');
+                        renderResult(data);
+                    }
+                    else if (data.status === "failed") {
+                        clearInterval(pollInterval);
+                        showError("后端分析任务失败，请检查日志。");
+                    }
+                } catch (error) {
+                    console.error("轮询错误:", error);
+                }
+            }, 2000); // 2000 毫秒 = 2 秒
+        }
+
+        // 渲染最终结果
+        function renderResult(data) {
+            document.getElementById('result-container').classList.remove('hidden');
+            
+            // 渲染打分并根据危险程度变色
+            const scoreDisplay = document.getElementById('score-display');
+            const score = data.malicious_score;
+            scoreDisplay.innerText = score.toExponential(4); // 科学计数法显示极小值
+            if(score > 0.5) {
+                scoreDisplay.classList.remove('text-green-600');
+                scoreDisplay.classList.add('text-red-600');
+            }
+
+            // 使用 Marked.js 渲染 Markdown 报告
+            const reportContainer = document.getElementById('report-content');
+            reportContainer.innerHTML = marked.parse(data.llm_summary);
+        }
+
+        function showError(msg) {
+            document.getElementById('status-text').innerText = msg;
+            document.getElementById('status-text').classList.add('text-red-600');
+            document.getElementById('loading-spinner').classList.add('hidden');
+            document.getElementById('upload-btn').disabled = false;
+        }
+    </script>
+</body>
+</html>
