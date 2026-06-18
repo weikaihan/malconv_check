@@ -2,7 +2,7 @@ from openai import OpenAI
 import os
 
 # 1. 填入你的 DeepSeek API Key
-API_KEY = "sk-2db52f0814a74f8e8977ab0082793a2a"  
+API_KEY = "请输入你的deepseek密钥key"  
 
 # 2. 初始化 OpenAI 客户端，但把请求地址指向 DeepSeek 的服务器
 client = OpenAI(
