@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+<html class="html" lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Feed" href="https://cgo.com.mx/wp/feed/" />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Feed de los comentarios" href="https://cgo.com.mx/wp/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cgo.com.mx\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.7"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://cgo.com.mx/wp/wp-includes/css/dist/block-library/style.min.css?ver=5.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='https://cgo.com.mx/wp/wp-includes/css/dist/block-library/theme.min.css?ver=5.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://cgo.com.mx/wp/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/fonts/fontawesome/css/all.min.css?ver=5.11.2' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-line-icons-css'  href='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/css/third/simple-line-icons.min.css?ver=2.4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css'  href='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/css/third/magnific-popup.min.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-css'  href='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/css/third/slick.min.css?ver=1.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='oceanwp-style-css'  href='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/css/style.min.css?ver=1.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='oceanwp-google-font-raleway-css'  href='//fonts.googleapis.com/css?family=Raleway%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100i%2C200i%2C300i%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i&#038;subset=latin&#038;ver=5.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css'  href='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-animations-css'  href='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.9.14' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css'  href='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.9.14' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css'  href='https://cgo.com.mx/wp/wp-content/uploads/elementor/css/global.css?ver=1596729209' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-73-css'  href='https://cgo.com.mx/wp/wp-content/uploads/elementor/css/post-73.css?ver=1596729209' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-1600-css'  href='https://cgo.com.mx/wp/wp-content/uploads/elementor/css/post-1600.css?ver=1596814322' type='text/css' media='all' />
+<link rel='stylesheet' id='oe-widgets-style-css'  href='https://cgo.com.mx/wp/wp-content/plugins/ocean-extra/assets/css/widgets.css?ver=5.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRaleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css'  href='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.12.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-brands-css'  href='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.12.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://cgo.com.mx/wp/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cgo.com.mx/wp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://cgo.com.mx/wp/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.7" />
+<link rel="canonical" href="https://cgo.com.mx/wp/" />
+<link rel='shortlink' href='https://cgo.com.mx/wp/' />
+<link rel="alternate" type="application/json+oembed" href="https://cgo.com.mx/wp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcgo.com.mx%2Fwp%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://cgo.com.mx/wp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcgo.com.mx%2Fwp%2F&#038;format=xml" />
+<!-- <meta name="NextGEN" version="3.3.6" /> -->
+<link rel="icon" href="https://cgo.com.mx/wp/wp-content/uploads/2020/08/cropped-CGO-favicon-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://cgo.com.mx/wp/wp-content/uploads/2020/08/cropped-CGO-favicon-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cgo.com.mx/wp/wp-content/uploads/2020/08/cropped-CGO-favicon-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://cgo.com.mx/wp/wp-content/uploads/2020/08/cropped-CGO-favicon-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			/*Contact form 7 Styles*/#wpcf7-f2235-p1600-o1{font-family:Raleway;font-size:16px;font-kerning:none;color:#ffffff;font-weight:700}.wpcf7-textarea{background-color:#ffffff}.wpcf7 input{background-color:#00391F}.wpcf7 input[type="text"]{background-color :#ffffff}.wpcf7 input[type="email"]{background-color :#ffffff}.wpcf7 input[type="tel"]{background-color :#ffffff}#wpcf7-f2235-p324-o1{font-family:Raleway;font-size:16px;font-kerning:none;color:#ffffff;font-weight:700}		</style>
+		<!-- OceanWP CSS -->
+<style type="text/css">
+/* General CSS */body,.has-parallax-footer:not(.separate-layout) #main{background-color:#20418e}body{background-image:url(https://cgo.com.mx/wp/wp-content/uploads/2020/05/footer-scaled.jpg)}body{background-position:top center}.container{width:1140px}#main #content-wrap,.separate-layout #main #content-wrap{padding-top:140px}/* Header CSS */#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner,.after-header-content .after-header-content-inner{height:64px}#site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a,.after-header-content-inner >a{line-height:64px}#site-header{border-color:rgba(241,241,241,0)}#site-header.transparent-header{background-color:rgba(255,255,255,0.74)}#site-header.has-header-media .overlay-header-media{background-color:rgba(0,0,0,0.5)}#site-logo #site-logo-inner a img,#site-header.center-header #site-navigation-wrap .middle-site-logo a img{max-width:98px}#site-header #site-logo #site-logo-inner a img,#site-header.center-header #site-navigation-wrap .middle-site-logo a img{max-height:93px}#site-logo a.site-logo-text{color:#ffffff}.effect-two #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:after,.effect-eight #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:before,.effect-eight #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:after{background-color:#002d62}.effect-six #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:before,.effect-six #site-navigation-wrap .dropdown-menu >li >a.menu-link >span:after{border-color:#002d62}.effect-ten #site-navigation-wrap .dropdown-menu >li >a.menu-link:hover >span,.effect-ten #site-navigation-wrap .dropdown-menu >li.sfHover >a.menu-link >span{-webkit-box-shadow:0 0 10px 4px #002d62;-moz-box-shadow:0 0 10px 4px #002d62;box-shadow:0 0 10px 4px #002d62}#site-navigation-wrap .dropdown-menu >li >a{padding:0 50px}#site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:#00391f}#site-navigation-wrap .dropdown-menu >li >a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover{color:#247a2b}#site-navigation-wrap .dropdown-menu >li >a{background-color:rgba(255,255,255,0)}.dropdown-menu .sub-menu{min-width:138px}.dropdown-menu .sub-menu,#searchform-dropdown,.current-shop-items-dropdown{background-color:rgba(255,255,255,0.43)}.navigation li.mega-cat .mega-cat-title{background-color:rgba(10,10,10,0.82)}a.sidr-class-toggle-sidr-close{background-color:#002d62}#sidr,#mobile-dropdown{background-color:#002d62}body .sidr a,body .sidr-class-dropdown-toggle,#mobile-dropdown ul li a,#mobile-dropdown ul li a .dropdown-toggle,#mobile-fullscreen ul li a,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a{color:#ffffff}#mobile-fullscreen a.close .close-icon-inner,#mobile-fullscreen a.close .close-icon-inner::after{background-color:#ffffff}body .sidr a:hover,body .sidr-class-dropdown-toggle:hover,body .sidr-class-dropdown-toggle .fa,body .sidr-class-menu-item-has-children.active >a,body .sidr-class-menu-item-has-children.active >a >.sidr-class-dropdown-toggle,#mobile-dropdown ul li a:hover,#mobile-dropdown ul li a .dropdown-toggle:hover,#mobile-dropdown .menu-item-has-children.active >a,#mobile-dropdown .menu-item-has-children.active >a >.dropdown-toggle,#mobile-fullscreen ul li a:hover,#mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover{color:#247a2b}#mobile-fullscreen a.close:hover .close-icon-inner,#mobile-fullscreen a.close:hover .close-icon-inner::after{background-color:#247a2b}/* Sidebar CSS */.widget-area{background-color:#1e73be}/* Typography CSS */#site-navigation-wrap .dropdown-menu >li >a,#site-header.full_screen-header .fs-dropdown-menu >li >a,#site-header.top-header #site-navigation-wrap .dropdown-menu >li >a,#site-header.center-header #site-navigation-wrap .dropdown-menu >li >a,#site-header.medium-header #site-navigation-wrap .dropdown-menu >li >a,.oceanwp-mobile-menu-icon a{font-family:Raleway;font-weight:600;font-style:normal;font-size:16px;letter-spacing:1.1px;text-transform:capitalize}.sidr-class-dropdown-menu li a,a.sidr-class-toggle-sidr-close,#mobile-dropdown ul li a,body #mobile-fullscreen ul li a{font-family:Raleway;font-weight:600}
+</style></head>
+
+<body class="home page-template-default page page-id-1600 wp-custom-logo wp-embed-responsive oceanwp-theme sidebar-mobile has-transparent-header default-breakpoint content-full-screen page-header-disabled has-breadcrumbs no-margins elementor-default elementor-kit-73 elementor-page elementor-page-1600"  itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+	
+	
+	<div id="outer-wrap" class="site clr">
+
+		<a class="skip-link screen-reader-text" href="#main">Saltar al contenido</a>
+
+		
+		<div id="wrap" class="clr">
+
+			
+				<div id="transparent-header-wrap" class="clr">
+
+<header id="site-header" class="transparent-header effect-two clr" data-height="64" itemscope="itemscope" itemtype="https://schema.org/WPHeader" role="banner">
+
+	
+		
+			
+			<div id="site-header-inner" class="clr container">
+
+				
+				
+
+<div id="site-logo" class="clr" itemscope itemtype="https://schema.org/Brand">
+
+	
+	<div id="site-logo-inner" class="clr">
+
+		<a href="https://cgo.com.mx/wp/" class="custom-logo-link" rel="home"><img width="202" height="104" src="https://cgo.com.mx/wp/wp-content/uploads/2020/04/cropped-CGO-Vectorial-1-1.png" class="custom-logo" alt="" /></a>
+	</div><!-- #site-logo-inner -->
+
+	
+	
+</div><!-- #site-logo -->
+
+			<div id="site-navigation-wrap" class="no-top-border clr">
+		
+			
+			
+			<nav id="site-navigation" class="navigation main-navigation clr" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+
+				<ul id="menu-cgo" class="main-menu dropdown-menu sf-menu"><li id="menu-item-2124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1600 current_page_item menu-item-2124"><a href="https://cgo.com.mx/wp/" class="menu-link"><span class="text-wrap">CGO</span></a></li><li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="https://cgo.com.mx/wp/nosotros/" class="menu-link"><span class="text-wrap">Nosotros</span></a></li><li id="menu-item-4723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4723"><a href="https://cgo.com.mx/wp/galeria/" class="menu-link"><span class="text-wrap">Galería</span></a></li><li id="menu-item-327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a href="https://cgo.com.mx/wp/contacto/" class="menu-link"><span class="text-wrap">Contacto</span></a></li></ul>
+			</nav><!-- #site-navigation -->
+
+			
+			
+					</div><!-- #site-navigation-wrap -->
+		
+		
+	
+				
+	<div class="oceanwp-mobile-menu-icon clr mobile-right">
+
+		
+		
+		
+		<a href="#" class="mobile-menu" aria-label="Menú en móvil">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+							<span class="oceanwp-text">Menú</span>
+
+						</a>
+
+		
+		
+		
+	</div><!-- #oceanwp-mobile-menu-navbar -->
+
+
+			</div><!-- #site-header-inner -->
+
+			
+			
+		
+				
+	
+</header><!-- #site-header -->
+
+	</div>
+
+			
+			<main id="main" class="site-main clr"  role="main">
+
+				
+	
+	<div id="content-wrap" class="container clr">
+
+		
+		<div id="primary" class="content-area clr">
+
+			
+			<div id="content" class="site-content clr">
+
+				
+				
+<article class="single-page-article clr">
+
+	
+<div class="entry clr" itemprop="text">
+				<div data-elementor-type="wp-page" data-elementor-id="1600" class="elementor elementor-1600" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-810c2b5 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="810c2b5" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-40f55e6 elementor-column elementor-col-100 elementor-top-column" data-id="40f55e6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-36bf310 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="36bf310" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-cd256e0 elementor-column elementor-col-50 elementor-inner-column" data-id="cd256e0" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-f98621f elementor-column elementor-col-50 elementor-inner-column" data-id="f98621f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-daceac8 elementor-widget elementor-widget-image" data-id="daceac8" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img src="https://cgo.com.mx/wp/wp-content/uploads/elementor/thumbs/CGO-blanco-oo1gskql01r0jtb60oib4n0qcly9bvaajcicxrvvl4.png" title="CGO-blanco" alt="CGO-blanco" />											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-d32f3c1 elementor-invisible elementor-widget elementor-widget-heading" data-id="d32f3c1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInLeft&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">CURAMOS EL DESORDEN </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-e34b4bb elementor-invisible elementor-widget elementor-widget-text-editor" data-id="e34b4bb" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInLeft&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><div class="page" title="Page 1"><div class="layoutArea"><div class="column"><p>A través de <b>Manuales, Procesos y Capacitación </b></p></div></div></div></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-881d025 elementor-widget elementor-widget-spacer" data-id="881d025" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-78336a8 elementor-view-stacked elementor-shape-square elementor-widget elementor-widget-icon" data-id="78336a8" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<a class="elementor-icon" href="https://api.whatsapp.com/send?phone=5215544479102&#038;text=Quiero%20agendar%20una%20cita%20">
+			<i aria-hidden="true" class="fab fa-whatsapp"></i>			</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-908e8ac elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="908e8ac" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e917f6e elementor-column elementor-col-100 elementor-top-column" data-id="e917f6e" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7ef36a1 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7ef36a1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-1e4060d elementor-column elementor-col-100 elementor-top-column" data-id="1e4060d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-86e16dc elementor-widget elementor-widget-spacer" data-id="86e16dc" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-893244f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="893244f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-ba47e8b elementor-column elementor-col-100 elementor-top-column" data-id="ba47e8b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4f3462f elementor-invisible elementor-widget elementor-widget-text-editor" data-id="4f3462f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><div class="page" title="Page 1">
+<div class="layoutArea">
+<div class="column">
+<p>En el entorno actual de cambios rápidos que vivimos, las empresas necesitan tener metas claras y una metodología estructurada para estar a la par con la competencia. En pocas ocasiones las empresas crecen y sobreviven sin metas ni dirección.</p>
+<p>Nuestra práctica profesional nos ha probado que las actividades de una empresa se pueden agrupar en tres líneas de trabajo: <strong>Diagnóstico, Desarrollo e Implementación;</strong> esfuerzos que ordenados y documentados, llevan al desarrollo necesario y crecimiento exitoso de las empresas.</p>
+</div>
+</div>
+</div></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-124fcfb elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="124fcfb" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-484dea4 elementor-column elementor-col-33 elementor-top-column" data-id="484dea4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4da438a elementor-invisible elementor-widget elementor-widget-image" data-id="4da438a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="200" height="200" src="https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo3.png" class="attachment-large size-large" alt="" srcset="https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo3.png 200w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo3-150x150.png 150w" sizes="(max-width: 200px) 100vw, 200px" />											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-aaf9ca6 elementor-invisible elementor-widget elementor-widget-heading" data-id="aaf9ca6" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Diagnóstico</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-c781f6a elementor-invisible elementor-widget elementor-widget-text-editor" data-id="c781f6a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><div class="page" title="Page 1">
+<div class="layoutArea">
+<div class="column">
+<p>Conocer el estado actual en cuanto al Clima Laboral, modelo de gestión, estructura y filosofía organizacional y gestión por procesos de la organización.</p>
+</div>
+</div>
+</div></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-0e1960a elementor-column elementor-col-33 elementor-top-column" data-id="0e1960a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-d44b595 elementor-invisible elementor-widget elementor-widget-image" data-id="d44b595" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="200" height="200" src="https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo2.png" class="attachment-large size-large" alt="" srcset="https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo2.png 200w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo2-150x150.png 150w" sizes="(max-width: 200px) 100vw, 200px" />											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2c850f9 elementor-invisible elementor-widget elementor-widget-heading" data-id="2c850f9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Desarrollo</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-1607425 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="1607425" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><div class="page" title="Page 1">
+<div class="layoutArea">
+<div class="column">
+<p>Elaboración de Políticas, Procedimientos, Perfiles de puesto e indicadores de desempeño (KPI ́s).</p>
+</div>
+</div>
+</div></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-f595f76 elementor-column elementor-col-33 elementor-top-column" data-id="f595f76" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4e321da elementor-invisible elementor-widget elementor-widget-image" data-id="4e321da" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="200" height="200" src="https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo1.png" class="attachment-large size-large" alt="" srcset="https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo1.png 200w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/icono_cgo1-150x150.png 150w" sizes="(max-width: 200px) 100vw, 200px" />											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-53beffa elementor-invisible elementor-widget elementor-widget-heading" data-id="53beffa" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Implementación</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7290694 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="7290694" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><div class="page" title="Page 1"><div class="layoutArea"><div class="column"><p>Presentación, Capacitación y acompañamiento en el proceso de cambio de conductas y habilidades de los integrantes de la organización.</p></div></div></div></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-e6fc7d3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="e6fc7d3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-07ad2cd elementor-column elementor-col-100 elementor-top-column" data-id="07ad2cd" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e4aff60 elementor-widget elementor-widget-spacer" data-id="e4aff60" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-429a56a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="429a56a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-7cc2627 elementor-column elementor-col-100 elementor-top-column" data-id="7cc2627" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4c0b84e elementor-invisible elementor-widget elementor-widget-heading" data-id="4c0b84e" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInLeft&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Portafolio de servicios</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-a25b25c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a25b25c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-77aba6d elementor-column elementor-col-33 elementor-top-column" data-id="77aba6d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-fd1a5ef elementor-invisible elementor-widget elementor-widget-heading" data-id="fd1a5ef" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">01</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-5a50498 elementor-column elementor-col-33 elementor-top-column" data-id="5a50498" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4cd9a2a elementor-invisible elementor-widget elementor-widget-image" data-id="4cd9a2a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img src="https://cgo.com.mx/wp/wp-content/uploads/2020/05/b-1-scaled.jpg" title="b" alt="b" class="elementor-animation-hang" />											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-59a778e elementor-column elementor-col-33 elementor-top-column" data-id="59a778e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9ab0fca elementor-invisible elementor-widget elementor-widget-heading" data-id="9ab0fca" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Productividad y normalización</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-11b565e elementor-invisible elementor-widget elementor-widget-text-editor" data-id="11b565e" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><b>C.G.O. </b>cuenta con un equipo de profesionales dedicado a desarrollar documentos necesarios para apoyar a sus clientes a alcanzar sus objetivos, mediante el diseño e implementación de MANUALES orientados principalmente a cubrir temas como:</p><ul><li>Políticas y procedimientos</li><li>Operaciones</li><li><span style="font-family: Poppins, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;">Estructura organizacional</span></li><li>Gerenciamiento</li><li><span style="font-family: Poppins, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;">Perfiles de puestos</span></li><li>Ventas</li></ul><p>Documentos objetivos, gráficos y fáciles de entender, son la clave de una empresa exitosa.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-054c7d1 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="054c7d1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-adf73f3 elementor-column elementor-col-100 elementor-top-column" data-id="adf73f3" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b35d8dc elementor-widget elementor-widget-spacer" data-id="b35d8dc" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-689bb51 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="689bb51" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-791bf66 elementor-column elementor-col-33 elementor-top-column" data-id="791bf66" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0c75c05 elementor-invisible elementor-widget elementor-widget-heading" data-id="0c75c05" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">02</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-84373b2 elementor-column elementor-col-33 elementor-top-column" data-id="84373b2" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b6235d9 elementor-invisible elementor-widget elementor-widget-image" data-id="b6235d9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="681" src="https://cgo.com.mx/wp/wp-content/uploads/2020/05/capacitacion-1024x681.jpg" class="elementor-animation-hang attachment-large size-large" alt="" srcset="https://cgo.com.mx/wp/wp-content/uploads/2020/05/capacitacion-1024x681.jpg 1024w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/capacitacion-300x200.jpg 300w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/capacitacion-768x511.jpg 768w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/capacitacion.jpg 1500w" sizes="(max-width: 1024px) 100vw, 1024px" />											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-bbb5588 elementor-column elementor-col-33 elementor-top-column" data-id="bbb5588" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bd9ecff elementor-invisible elementor-widget elementor-widget-heading" data-id="bd9ecff" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Capacitación</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-522faef elementor-invisible elementor-widget elementor-widget-text-editor" data-id="522faef" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Desarrollamos habilidades gerenciales y directivas a través de sesiones de formación que propician la alineación de los participantes con los objetivos de la empresa, mejorando su toma de decisiones y liderazgo:</p></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-9fdeeef elementor-invisible elementor-widget elementor-widget-text-editor" data-id="9fdeeef" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><ul>
+<li>Habilidades Gerenciales</li>
+</ul>
+<div class="page" title="Page 2">
+<div class="layoutArea">
+<div class="column">
+<ul>
+<li>
+<p>&nbsp;Liderazgo</p>
+</li>
+<li>
+<p>&nbsp;Coaching</p>
+</li>
+<li>
+<p>Trabajo en equipo</p>
+</li>
+<li>
+<p><span style="font-size: 15px;">&nbsp;Comunidades de aprendizaje y colaboración</span></p>
+</li>
+</ul>
+<p><span style="font-size: 14px;">&nbsp;<b>Metodología</b>:</span></p>
+<ul>
+<li>
+<p>&nbsp;Programas a la medida por Audiencia, Competencias, Proyectos, etc.</p>
+</li>
+<li>
+<p>&nbsp;Portafolio de evidencias</p>
+</li>
+</ul>
+</div>
+</div>
+</div></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-4d3bc32 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="4d3bc32" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-774fc5c elementor-column elementor-col-100 elementor-top-column" data-id="774fc5c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-df60a1c elementor-widget elementor-widget-spacer" data-id="df60a1c" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-efe3df5 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="efe3df5" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e8c4005 elementor-column elementor-col-33 elementor-top-column" data-id="e8c4005" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-00aec95 elementor-invisible elementor-widget elementor-widget-heading" data-id="00aec95" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">03</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-88d600f elementor-column elementor-col-33 elementor-top-column" data-id="88d600f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-45e2357 elementor-invisible elementor-widget elementor-widget-image" data-id="45e2357" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="681" src="https://cgo.com.mx/wp/wp-content/uploads/2020/05/organizacional-1024x681.jpg" class="elementor-animation-hang attachment-large size-large" alt="" srcset="https://cgo.com.mx/wp/wp-content/uploads/2020/05/organizacional-1024x681.jpg 1024w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/organizacional-300x200.jpg 300w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/organizacional-768x511.jpg 768w, https://cgo.com.mx/wp/wp-content/uploads/2020/05/organizacional.jpg 1500w" sizes="(max-width: 1024px) 100vw, 1024px" />											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-259fd68 elementor-column elementor-col-33 elementor-top-column" data-id="259fd68" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5d00d16 elementor-invisible elementor-widget elementor-widget-heading" data-id="5d00d16" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Desarrollo organizacional</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-d199866 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="d199866" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><div class="page" title="Page 2"><div class="layoutArea"><div class="column"><p>Es el enfoque sistemático en la mejora integral de los pilares esenciales para el desarrollo y crecimiento ordenado de las empresas por medio de 5 pilares:</p><ul><li><span style="font-size: 15px; letter-spacing: 0.2px;">Personas</span></li><li>Procesos</li><li>Herramientas</li><li>Organización </li><li>Cultura</li></ul></div></div></div></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-92114bd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="92114bd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-6e23e7f elementor-column elementor-col-100 elementor-top-column" data-id="6e23e7f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4b46ce3 elementor-widget elementor-widget-spacer" data-id="4b46ce3" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-1923e17 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="1923e17" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-8d75537 elementor-column elementor-col-50 elementor-top-column" data-id="8d75537" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ddda213 elementor-invisible elementor-widget elementor-widget-heading" data-id="ddda213" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInLeft&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Ordenar para crecer</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-926f8e0 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="926f8e0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><div class="page" title="Page 3"><div class="layoutArea"><div class="column"><p>Contar con servicios o productos de alta calidad, no basta para garantizar el crecimiento ordenado y sostenible de las empresas; estructura organizacional y gestión por procesos son fundamentales para el crecimiento empresarial.</p></div></div></div></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-54c8940 elementor-invisible elementor-widget elementor-widget-heading" data-id="54c8940" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInUp&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Conoce más en nuestro canal</h2>		</div>
+				</div>
+				<section class="elementor-element elementor-element-68f57f8 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible elementor-section elementor-inner-section" data-id="68f57f8" data-element_type="section" data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-d0ae27c elementor-column elementor-col-50 elementor-inner-column" data-id="d0ae27c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0bc7411 elementor-view-default elementor-widget elementor-widget-icon" data-id="0bc7411" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<a class="elementor-icon" href="https://www.youtube.com/channel/UCvt8_B-_5bWiuT7VvNITX-A">
+			<i aria-hidden="true" class="fab fa-youtube"></i>			</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-85c86c7 elementor-column elementor-col-50 elementor-inner-column" data-id="85c86c7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-91bfe6e elementor-widget elementor-widget-heading" data-id="91bfe6e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><span style="background-color: rgba(255, 255, 255, 0.14); font-family: Raleway, sans-serif; font-size: 21px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600;">CGO Business Consulting, S.C.</span></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-9c40721 elementor-invisible elementor-column elementor-col-50 elementor-top-column" data-id="9c40721" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-2b444b6 elementor-aspect-ratio-169 elementor-widget elementor-widget-video" data-id="2b444b6" data-element_type="widget" data-settings="{&quot;aspect_ratio&quot;:&quot;169&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-wrapper elementor-fit-aspect-ratio elementor-open-inline">
+			<iframe class="elementor-video-iframe" allowfullscreen title="Reproductor de vídeo youtube" src="https://www.youtube.com/embed/n-BgggKYMZk?feature=oembed&amp;start&amp;end&amp;wmode=opaque&amp;loop=0&amp;controls=1&amp;mute=0&amp;rel=0&amp;modestbranding=0"></iframe>		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-504eb47 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="504eb47" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-17ddb10 elementor-column elementor-col-100 elementor-top-column" data-id="17ddb10" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ebdc391 elementor-widget elementor-widget-spacer" data-id="ebdc391" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-dee20ec elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="dee20ec" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-8f543b2 elementor-column elementor-col-50 elementor-top-column" data-id="8f543b2" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap  elementor-element-populated">
+							<div class="elementor-background-overlay"></div>
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-44490aa elementor-widget elementor-widget-image" data-id="44490aa" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img src="https://cgo.com.mx/wp/wp-content/uploads/elementor/thumbs/CGO-Vectorial-1-oo1h6b5ptzkj3u0jvvz1fcnvc2v9pcsqdyxmo2olr8.png" title="CGO-Vectorial" alt="CGO-Vectorial" />											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5ca50c9 elementor-widget elementor-widget-heading" data-id="5ca50c9" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Hablemos de<br>tu empresa</h2>		</div>
+				</div>
+				<section class="elementor-element elementor-element-7890e62 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="7890e62" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-47acb8a elementor-column elementor-col-50 elementor-inner-column" data-id="47acb8a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6e38933 elementor-view-stacked elementor-shape-square elementor-widget elementor-widget-icon" data-id="6e38933" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<a class="elementor-icon" href="https://www.facebook.com/cgo.mx/">
+			<i aria-hidden="true" class="fab fa-facebook-f"></i>			</a>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-b753371 elementor-column elementor-col-50 elementor-inner-column" data-id="b753371" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-13b3ed9 elementor-widget elementor-widget-heading" data-id="13b3ed9" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">CGO Business Consulting, S.C.</h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-6b50636 elementor-column elementor-col-50 elementor-top-column" data-id="6b50636" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e643dcf elementor-widget elementor-widget-heading" data-id="e643dcf" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Contáctanos</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3655de5 elementor-widget elementor-widget-shortcode" data-id="3655de5" data-element_type="widget" data-widget_type="shortcode.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-shortcode"><div role="form" class="wpcf7" id="wpcf7-f2235-p1600-o1" lang="es-ES" dir="ltr">
+<div class="screen-reader-response" role="alert" aria-live="polite"></div>
+<form action="/wp/#wpcf7-f2235-p1600-o1" method="post" class="wpcf7-form init" novalidate="novalidate">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="2235" />
+<input type="hidden" name="_wpcf7_version" value="5.2.1" />
+<input type="hidden" name="_wpcf7_locale" value="es_ES" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2235-p1600-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="1600" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</div>
+<p><label> Nombre (requerido)<br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> </label></p>
+<p><label> Correo electrónico (requerido)<br />
+    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> </label></p>
+<p><label> Whatsapp<br />
+<span class="wpcf7-form-control-wrap whatsapp"><input type="tel" name="whatsapp" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" id="whatsapp" aria-invalid="false" /></span> </label></p>
+<p><label> Mensaje<br />
+    <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </label></p>
+<p><input type="submit" value="Enviar" class="wpcf7-form-control wpcf7-submit" /></p>
+<div class="wpcf7-response-output" role="alert" aria-hidden="true"></div></form></div></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-9fe6ff2 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="9fe6ff2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4593a21 elementor-column elementor-col-100 elementor-top-column" data-id="4593a21" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-572949c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="572949c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-de90bc1 elementor-column elementor-col-100 elementor-top-column" data-id="de90bc1" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f383223 elementor-widget elementor-widget-heading" data-id="f383223" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><a href="https://cgo.com.mx/wp/aviso-de-privacidad/">Aviso de Privacidad​</a></h2>		</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+			</div>
+</article>
+				
+			</div><!-- #content -->
+
+			
+		</div><!-- #primary -->
+
+		
+	</div><!-- #content-wrap -->
+
+	
+
+        </main><!-- #main -->
+
+        
+        
+        
+            
+<footer id="footer" class="site-footer" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+
+    
+    <div id="footer-inner" class="clr">
+
+        
+
+<div id="footer-bottom" class="clr no-footer-nav">
+
+	
+	<div id="footer-bottom-inner" class="container clr">
+
+		
+		
+			<div id="copyright" class="clr" role="contentinfo">
+				Copyright 2021 - CGO Business Consulting S.C. 
+			</div><!-- #copyright -->
+
+		
+	</div><!-- #footer-bottom-inner -->
+
+	
+</div><!-- #footer-bottom -->
+
+
+    </div><!-- #footer-inner -->
+
+    
+</footer><!-- #footer -->
+        
+        
+    </div><!-- #wrap -->
+
+    
+</div><!-- #outer-wrap -->
+
+
+
+<a id="scroll-top" class="scroll-top-right" href="#"><span class="fa fa-angle-up" aria-label="Hacer scroll a la parte superior de la página"></span></a>
+
+
+<div id="sidr-close">
+	<a href="#" class="toggle-sidr-close" aria-label="Cerrar el menú móvil">
+		<i class="icon icon-close" aria-hidden="true"></i><span class="close-text">Cerrar menú</span>
+	</a>
+</div>
+    
+    
+
+<!-- ngg_resource_manager_marker --><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/cgo.com.mx\/wp\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.2.1'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/js/third/magnific-popup.min.js?ver=1.8.2'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/js/third/lightbox.min.js?ver=1.8.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var oceanwpLocalize = {"isRTL":"","menuSearchStyle":"disabled","sidrSource":"#sidr-close, #site-navigation","sidrDisplace":"1","sidrSide":"left","sidrDropdownTarget":"link","verticalHeaderTarget":"link","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":"https:\/\/cgo.com.mx\/wp\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/js/main.min.js?ver=1.8.2'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-includes/js/wp-embed.min.js?ver=5.4.7'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/themes/oceanwp/assets/js/third/html5.min.js?ver=1.8.2'></script>
+<![endif]-->
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=2.9.14'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.7.6'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6'></script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=2.9.14'></script>
+<script type='text/javascript'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Compartir en Facebook","shareOnTwitter":"Compartir en Twitter","pinIt":"Pinear","downloadImage":"Descargar imagen"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.9.14","urls":{"assets":"https:\/\/cgo.com.mx\/wp\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_lightbox_enable_counter":"yes","elementor_lightbox_enable_fullscreen":"yes","elementor_lightbox_enable_zoom":"yes","elementor_lightbox_enable_share":"yes","elementor_lightbox_title_src":"title","elementor_lightbox_description_src":"description"},"editorPreferences":[]},"post":{"id":1600,"title":"","excerpt":"","featuredImage":false}};
+</script>
+<script type='text/javascript' src='https://cgo.com.mx/wp/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=2.9.14'></script>
+<script type='text/javascript'>
+document.tidioChatCode = "z0eve0fvfvy1qspw27diuy436onwok6m";
+(function() {
+  function asyncLoad() {
+    var tidioScript = document.createElement("script");
+    tidioScript.type = "text/javascript";
+    tidioScript.async = true;
+    tidioScript.src = "//code.tidio.co/z0eve0fvfvy1qspw27diuy436onwok6m.js";
+    document.body.appendChild(tidioScript);
+  }
+  if (window.attachEvent) {
+    window.attachEvent("onload", asyncLoad);
+  } else {
+    window.addEventListener("load", asyncLoad, false);
+  }
+})();
+</script></body>
+</html>

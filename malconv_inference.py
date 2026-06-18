@@ -1,66 +1,122 @@
+# malconv_inference.py
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 import numpy as np
-import tensorflow as tf
 import os
 
-# 1. 核心配置（请务必确保与你训练时的参数完全一致！）
-# MalConv 通常固定一个最大输入长度，常见的有 1MB (1048576) 或 2MB (2000000)
-MAX_LEN = 1048576  # 注意：请修改为你训练模型时使用的真实长度
+# 1. 模型定义：完整复制自 malconv1(1).py
+class MalConv1(nn.Module):
+    def __init__(
+        self,
+        maxlen: int = 2 ** 20,
+        input_dim: int = 257,
+        embed_dim: int = 128,
+        conv_filters: int = 256,
+        conv_kernel: int = 500,
+        conv_stride: int = 500,
+        d_model: int = 128,
+        nhead: int = 4,
+        num_layers: int = 4,
+        d_ff: int = 512,
+        dropout: float = 0.1,
+        num_classes: int = 1,
+    ):
+        super().__init__()
+        self.embed = nn.Embedding(input_dim, embed_dim, padding_idx=256)
+        self.conv_down = nn.Conv1d(embed_dim, conv_filters, kernel_size=conv_kernel, stride=conv_stride)
+        self.bn_down = nn.BatchNorm1d(conv_filters)
+        self.conv_res1 = nn.Conv1d(conv_filters, conv_filters, kernel_size=3, padding=1)
+        self.bn_res1 = nn.BatchNorm1d(conv_filters)
+        self.conv_res2 = nn.Conv1d(conv_filters, conv_filters, kernel_size=3, padding=1)
+        self.bn_res2 = nn.BatchNorm1d(conv_filters)
+        
+        if conv_filters != d_model:
+            self.proj = nn.Linear(conv_filters, d_model)
+        else:
+            self.proj = nn.Identity()
+            
+        seq_len = (maxlen - conv_kernel) // conv_stride + 1
+        self.pos_embed = nn.Parameter(torch.randn(1, seq_len, d_model) * 0.02)
+        
+        encoder_layer = nn.TransformerEncoderLayer(
+            d_model=d_model, nhead=nhead, dim_feedforward=d_ff,
+            dropout=dropout, activation="gelu", batch_first=True
+        )
+        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+        self.attn_query = nn.Linear(d_model, 1)
+        self.classifier = nn.Sequential(
+            nn.Linear(d_model, 128),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(128, num_classes),
+        )
 
-# 2. 全局加载模型 (利用全局变量实现常驻内存，避免每次请求引发严重的冷启动延迟)
-print("正在加载 MalConv 模型并初始化计算图...")
-malconv_model = tf.keras.models.load_model('malconv.h5',compile=False)
-print("模型加载完成！")
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = self.embed(x)
+        x = x.permute(0, 2, 1)
+        x = self.conv_down(x)
+        x = F.relu(self.bn_down(x))
+        identity = x
+        x = F.relu(self.bn_res1(self.conv_res1(x)))
+        x = self.bn_res2(self.conv_res2(x))
+        x = F.relu(x + identity)
+        x = x.permute(0, 2, 1)
+        x = self.proj(x)
+        x = x + self.pos_embed[:, :x.size(1), :]
+        x = self.transformer(x)
+        attn_scores = self.attn_query(x)
+        attn_weights = F.softmax(attn_scores, dim=1)
+        x = (x * attn_weights).sum(dim=1)
+        return self.classifier(x)
 
-def preprocess_file(file_path, max_len=MAX_LEN):
-    """
-    读取文件的原始字节，并将其转化为模型期望的固定长度数组
-    """
-    # 读取二进制原始数据
-    with open(file_path, 'rb') as f:
-        bytez = f.read()
+# 2. 实例化模型（使用报错日志中反推出来的确切参数）
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # 将字节转化为 0-255 的整数数组
-    b = np.frombuffer(bytez, dtype=np.uint8)
+malconv_model = MalConv1(
+    maxlen=2**20,
+    input_dim=257,
+    embed_dim=64,           # 保持这个维度
+    conv_filters=128,       # 保持这个维度
+    conv_kernel=500,
+    conv_stride=500,
+    d_model=96,             # 保持这个维度
+    nhead=4,
+    num_layers=2,           # <--- 【关键修改】改为 2 层，与 .pt 文件对齐
+    d_ff=256,               # 保持这个维度
+    dropout=0.2,
+    num_classes=1
+).to(device)
 
-    # 截断或填充操作
-    if len(b) > max_len:
-        # 如果文件过大，截断尾部多余的字节
-        b = b[:max_len]
-    else:
-        # 如果文件较小，在尾部填充 0 (Padding)
-        b = np.pad(b, (0, max_len - len(b)), 'constant', constant_values=0)
-
-    # 增加一个 Batch 维度。Keras 预测时期望的输入 shape 是 (batch_size, sequence_length)
-    # 增加维度后，最终返回的 shape 变为 (1, max_len)
-    return np.expand_dims(b, axis=0)
+# 3. 加载权重
+weight_path = 'malconv1_best.pt'
+if os.path.exists(weight_path):
+    print(f"[*] 正在加载权重: {weight_path}")
+    state_dict = torch.load(weight_path, map_location=device)
+    malconv_model.load_state_dict(state_dict)
+    malconv_model.eval()
+    print("[*] 模型加载成功！")
+else:
+    print(f"[!] 警告: 未找到权重文件 {weight_path}")
 
 def predict_is_malware(file_path, threshold=0.5):
-    """
-    接收文件路径，输出恶性评估分值和结论
-    """
-    # 1. 执行预处理
-    processed_data = preprocess_file(file_path)
-
-    # 2. 模型预测 (假设你的模型输出层是一个 sigmoid 激活的单神经元，输出 0~1 的概率)
-    prediction_score = malconv_model.predict(processed_data, verbose=0)[0][0]
-
-    # 3. 结果判定
-    is_malicious = prediction_score >= threshold
-
+    """推理接口"""
+    with open(file_path, 'rb') as f:
+        bytez = f.read()
+    
+    maxlen = 2**20
+    buf = np.ones((maxlen,), dtype=np.int64) * 256
+    chunk = np.frombuffer(bytez[:maxlen], dtype=np.uint8)
+    buf[:len(chunk)] = chunk
+    
+    x = torch.from_numpy(buf).long().unsqueeze(0).to(device)
+    
+    with torch.no_grad():
+        logits = malconv_model(x).squeeze(-1)
+        score = torch.sigmoid(logits).item()
+        
     return {
         "file_name": os.path.basename(file_path),
-        "malicious_score": float(prediction_score), # 提取为基础的浮点数，方便后续存入数据库
-        "is_malware": bool(is_malicious)
+        "malicious_score": score,
+        "is_malware": score >= threshold
     }
-
-# === 本地调试入口 ===
-if __name__ == "__main__":
-    # 随便找一个本地的 exe 文件测试一下，比如系统自带的记事本
-    test_file = r"D:\code\eyi_oranizition\files\begnin\00eea85752664955047caad7d6280bc7bf1ab91c61eb9a2542c26b747a12e963.exe" 
-    
-    if os.path.exists(test_file):
-        print(f"正在分析文件: {test_file}")
-        result = predict_is_malware(test_file)
-        print(f"分析结果: {result}")
-    else:
-        print("请提供一个真实的测试文件路径。")
