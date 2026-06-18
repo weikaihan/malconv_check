@@ -130,6 +130,7 @@
                         clearInterval(pollInterval);
                         document.getElementById('status-text').innerText = "分析完成！";
                         document.getElementById('loading-spinner').classList.add('hidden');
+                        document.getElementById('upload-btn').disabled = false;
                         renderResult(data);
                     }
                     else if (data.status === "failed") {

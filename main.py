@@ -25,6 +25,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# 【核心修复 1】启动事件：清理系统意外关闭导致的僵尸任务
+@app.on_event("startup")
+def startup_event():
+    db = SessionLocal()
+    try:
+        # 查找所有卡在排队或分析中的历史遗留任务
+        stuck_samples = db.query(models.Sample).filter(
+            models.Sample.status.in_(["pending", "analyzing"])
+        ).all()
+        
+        # 将它们统一重置为 failed，释放死锁状态，让用户可以重新上传重试
+        for sample in stuck_samples:
+            sample.status = "failed"
+            
+        if stuck_samples:
+            db.commit()
+            print(f"[*] 系统自检完成：已清理 {len(stuck_samples)} 个意外中断的僵尸任务。")
+    except Exception as e:
+        print(f"系统自检异常: {e}")
+    finally:
+        db.close()
+
 # 数据库会话依赖注入
 def get_db():
     db = SessionLocal()
@@ -47,12 +69,37 @@ async def upload_sample(
     # 2. 查询缓存：如果数据库中已有该哈希，直接返回实现秒传
     existing_sample = db.query(models.Sample).filter(models.Sample.md5_hash == file_hash).first()
     if existing_sample:
-        return {"status": "success", "message": "命中历史缓存", "sample_id": existing_sample.id}
-    
+        if existing_sample.status == "completed":
+            return {"status": "success", "message": "命中历史缓存", "sample_id": existing_sample.id}
+        elif existing_sample.status == "failed":
+            # 如果之前由于某种原因失败了，给它一次重新做人的机会，覆盖原有数据重试
+            existing_sample.status = "pending"
+            db.commit()
+            
+            # 重新落盘并排队
+            base_dir = os.path.abspath(os.path.dirname(__file__))
+            storage_dir = os.path.join(base_dir, "tmp_storage")
+            
+            # 【核心修复 2】防止由于暂存文件夹被删而引发 FileNotFoundError 崩溃
+            os.makedirs(storage_dir, exist_ok=True)
+            
+            file_path = os.path.join(storage_dir, f"{file_hash}.vir")
+            with open(file_path, "wb") as f:
+                f.write(content)
+                
+            background_tasks.add_task(background_analysis_task, existing_sample.id, file_path)
+            return {"status": "accepted", "message": "发现失败残存，正在重新分析", "sample_id": existing_sample.id}
+        else:
+            # 正在 analyzing 排队中的直接返回
+            return {"status": "success", "message": "正在处理中", "sample_id": existing_sample.id}
+            
     # 3. 创建暂存目录并落盘
-    storage_dir = "./tmp_storage"
+    base_dir = os.path.abspath(os.path.dirname(__file__))
+    storage_dir = os.path.join(base_dir, "tmp_storage")
     os.makedirs(storage_dir, exist_ok=True)
-    file_path = os.path.join(storage_dir, file_hash)
+    
+    # 强行加上 .vir 后缀，一方面防止手滑双击，另一方面绕过杀软自动扫描锁
+    file_path = os.path.join(storage_dir, f"{file_hash}.vir")
     with open(file_path, "wb") as f:
         f.write(content)
         
@@ -63,7 +110,7 @@ async def upload_sample(
     db.refresh(new_sample)
     
     # 5. 将繁重的模型推演任务抛给异步 Worker
-    background_tasks.add_task(background_analysis_task, new_sample.id, file_path, db)
+    background_tasks.add_task(background_analysis_task, new_sample.id, file_path)
     
     return {
         "status": "accepted", 
@@ -83,7 +130,7 @@ def check_status(sample_id: str, db: Session = Depends(get_db)):
         "status": sample.status
     }
     
-    # 如果分析完成，把分数和 DeepSeek 报告一起查出来返回给前端
+    # 如果分析完成，把分数和 DeepSeek (或本地 Mock) 报告一起查出来返回给前端
     if sample.status == "completed":
         result = db.query(models.DetectionResult).filter(models.DetectionResult.sample_id == sample.id).first()
         report = db.query(models.AnalysisReport).filter(models.AnalysisReport.sample_id == sample.id).first()

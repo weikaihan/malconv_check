@@ -3,7 +3,7 @@ import uuid
 from datetime import datetime
 from sqlalchemy import Column, String, Integer, Float, Text, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
-from database import Base # 从我们刚写的 database.py 导入 Base
+from database import Base 
 
 def generate_uuid():
     return str(uuid.uuid4())
@@ -26,7 +26,10 @@ class DetectionResult(Base):
     
     id = Column(String(36), primary_key=True, default=generate_uuid)
     sample_id = Column(String(36), ForeignKey('samples.id'), nullable=False)
-    model_name = Column(String(50), nullable=False) 
+    
+    # 【核心修复】：加上 default="MalConv"，使得模型在未显式提供名称时默认填充
+    model_name = Column(String(50), default="MalConv", nullable=False) 
+    
     malicious_score = Column(Float, nullable=False)
     
     sample = relationship("Sample", back_populates="results")

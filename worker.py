@@ -1,68 +1,67 @@
 # worker.py
-import asyncio
-# 引入数据库模型，注意增加了 AnalysisReport
-from models import Sample, DetectionResult, AnalysisReport 
-
-# 导入我们刚刚写好的两个核心工作函数
+import time
+import models
+# 1. 关键修复：导入数据库连接池
+from database import SessionLocal 
 from malconv_inference import predict_is_malware
 from llm_evaluator import generate_security_report
 
-# 假设你之前在 malconv_inference 里已经做了模型缓存，这里直接调用即可
-# 或者你可以保留原来 worker.py 里的 get_malconv_model() 逻辑
-
-async def background_analysis_task(sample_id: str, file_path: str, db_session):
-    """
-    异步并发核心逻辑：流水线式执行 [特征判定] -> [LLM 总结]
-    """
+# 2. 关键修复：去掉了 async，去掉了 db_session 参数
+def background_analysis_task(sample_id: str, file_path: str):
+    # 3. 关键修复：Worker 自己创建专属的数据库连接
+    db_session = SessionLocal() 
+    
     try:
-        # 1. 更新数据库状态为 "analyzing"
-        sample = db_session.query(Sample).filter(Sample.id == sample_id).first()
+        # 替换斜杠，防止 Windows 路径转义 bug
+        safe_file_path = file_path.replace("\\", "/")
+        
+        # 更新状态为分析中
+        sample = db_session.query(models.Sample).filter(models.Sample.id == sample_id).first()
         sample.status = "analyzing"
         db_session.commit()
-        print(f"⏳ 开始处理样本: {sample_id}")
 
-        # ==========================================
-        # 阶段一：传统模型判定层 (获取分数)
-        # ==========================================
         print(f"[{sample_id}] 正在执行 MalConv 原始字节深度学习检测...")
-        # 真实调用！传入文件路径，拿到包含分数的字典
-        result_dict = predict_is_malware(file_path) 
         
-        # 将传统模型的分数记录进数据库
-        detection_result = DetectionResult(
+        # 避开杀软锁定
+        time.sleep(0.5)
+
+        # 执行底层推演
+        result_dict = predict_is_malware(safe_file_path) 
+        
+        detection_result = models.DetectionResult(
             sample_id=sample.id,
-            model_name="MalConv",
             malicious_score=result_dict['malicious_score']
         )
         db_session.add(detection_result)
         
-        # ==========================================
-        # 阶段二：LLM 智能增强层 (生成报告)
-        # ==========================================
-        print(f"[{sample_id}] 正在请求 Gemini 大模型生成评估报告...")
-        # 将刚才算出的分数和判定结论，喂给大模型
+        # 执行 LLM 生成
         llm_summary_text = generate_security_report(
             file_name=result_dict['file_name'],
             malicious_score=result_dict['malicious_score'],
             is_malware=result_dict['is_malware']
         )
-        
-        # 将大模型生成的自然语言报告记录进数据库
-        report = AnalysisReport(
+        report = models.AnalysisReport(
             sample_id=sample.id,
             llm_summary=llm_summary_text
         )
         db_session.add(report)
 
-        # ==========================================
-        # 阶段三：收尾与状态确认
-        # ==========================================
+        # 完成收尾
         sample.status = "completed"
         db_session.commit()
-        print(f"✅ 样本 {sample_id} 全流程分析与评估完毕！")
-
+        print(f"[{sample_id}] 分析圆满完成！")
+        
     except Exception as e:
-        # 如果中间任何一步（比如文件损坏、API超时）崩了，标记为失败
-        sample.status = "failed"
-        db_session.commit()
+        # 【关键修复】如果报错是因为数据库自身引起的，必须先回滚洗清异常状态，否则接下来的 query 会引发二次崩溃！
+        db_session.rollback()
+        
+        # 发生错误时，将状态改写为 failed
+        sample = db_session.query(models.Sample).filter(models.Sample.id == sample_id).first()
+        if sample:
+            sample.status = "failed"
+            db_session.commit()
         print(f"❌ 样本 {sample_id} 分析失败: {str(e)}")
+        
+    finally:
+        # 4. 关键修复：无论分析成功还是报错，最后必须关闭数据库连接，防止内存泄漏！
+        db_session.close()
