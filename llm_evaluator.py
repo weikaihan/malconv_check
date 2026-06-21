@@ -1,48 +1,75 @@
 # llm_evaluator.py
 import os
+from openai import OpenAI
 
-# 注释掉真实的 API 库导入，彻底禁用联网
-# from openai import OpenAI
-# API_KEY = "..."
-# client = OpenAI(...)
+# 1. 配置你的大模型 API 密钥
+API_KEY = "api_key"  # 请替换为真实的 Key
+BASE_URL = "https://api.deepseek.com/v1"
 
-def generate_security_report(file_name, malicious_score, is_malware, threshold=0.5):
-    """
-    【本地挡板版】屏蔽了大模型 API 调用。
-    利用 if-else 直接生成格式化的 Markdown 报告，供前端测试使用。
-    """
-    print("已禁用大模型联网，正在生成本地快速评估报告...")
+client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
+
+def generate_security_report(file_name, malicious_score, is_malware, pe_evidence=None, threshold=0.5):
+    if not is_malware:
+        return f"### 🟢 安全判定报告\n**样本**：`{file_name}`\n**得分**：`{malicious_score:.4f}`\n判定为良性文件，放行。"
+
+    # 将证据字典转化为文本
+    evidence_text = "未提取到 PE 结构证据。"
+    if pe_evidence:
+        apis = ", ".join(pe_evidence.get('suspicious_apis', [])) or "无"
+        sections = ", ".join(pe_evidence.get('high_entropy_sections', [])) or "无"
+        strings = ", ".join(pe_evidence.get('suspicious_strings', [])) or "无"
+        
+        evidence_text = f"""
+        - 🔴 检出的高危 API 调用：{apis}
+        - 🟠 发现的高熵值/加壳节区：{sections}
+        - 🌐 提取到的可疑网络地址：{strings}
+        """
+
+    # 【核心修改】：把铁证写进提示词！强制大模型根据证据说话
+    prompt = f"""
+    你是一名高级威胁情报分析师（CTI）。
+    请基于底层的 AI 评分以及真实的逆向解剖证据，编写一份《静态威胁研判报告》。
     
-    # 简单的本地逻辑判断
-    if is_malware:
-        risk_level = "**极高危** ❌"
-        advice = "系统底层检测到强烈的恶意字节特征。建议：立即隔离该文件，并在安全环境下作进一步排查。"
-    else:
-        if malicious_score > 0.3:
-            risk_level = "**可疑** ⚠️"
-            advice = "文件具有一定的异常特征，但不属于已知的高危病毒。建议：转入动态沙箱观察运行行为。"
-        else:
-            risk_level = "**安全** ✅"
-            advice = "未检测到明显的恶意代码特征。建议：可信放行。"
+    【基础情报】
+    - 样本名称：{file_name}
+    - AI 危险打分：{malicious_score:.4f} (阈值 {threshold})
+    
+    【🔧 真实解剖铁证 (非常重要)】
+    {evidence_text}
 
-    # 组装返回给前端的 Markdown 字符串
-    mock_report = f"""
-### 本地快速评估报告 (LLM 已禁用)
+    请输出 Markdown 报告，包含：
+    ### 1. 🛡️ 威胁定性与行为剖析
+    (必须严格基于提供的【真实解剖铁证】分析。比如提取到了 VirtualAlloc 就说明有内存注入，提取到了 URL 就说明有外部通信。绝不允许无中生有！如果铁证是“无”，请基于 AI 危险打分给出合理猜测，并标明“缺少明显静态证据，建议动态沙箱分析”。)
+    
+    ### 2. 🔬 神经网络引擎洞察
+    (解释为什么底层 AI 引擎会打出这个分数)
+    
+    ### 3. ⚔️ 应急响应处置建议
+    """
 
-**风险级别**：{risk_level}
+    try:
+        response = client.chat.completions.create(
+            model="deepseek-chat",  # 确保这里是你要调用的模型名字
+            messages=[
+                {"role": "system", "content": "你是一名严谨的网络安全技术专家，只输出专业的技术分析与应急响应建议，绝不使用俏皮话或大白话。"},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.3,  # 降低温度，让模型的推测更加严谨、克制
+            timeout=20  
+        )
+        report_markdown = response.choices[0].message.content
+        print("[*] 专业版大模型威胁推演报告生成完毕！")
+        return report_markdown
+        
+    except Exception as e:
+        print(f"[!] 大模型 API 调用失败: {e}")
+        # API 崩溃时的灾备显示
+        return f"### 🔴 高危告警 (AI 研判服务异常)\n\n**样本**：`{file_name}`\n**得分**：`{malicious_score:.4f}`\n\n系统已将其判定为恶意软件。但当前 AI 分析接口异常，错误详情：{e}。\n\n**处置建议**：立即封堵该文件，并转交安全团队人工介入提取 IOC。"
 
-**数据解读**：
-该文件名为 `{file_name}`，当前模型检出得分为 `{malicious_score:.6f}`。
-*(注：该分数由本地 MalConv 模型直接输出，当前大模型解释功能处于暂时禁用状态。)*
-
-**处置建议**：
-{advice}
-"""
-    return mock_report
-
-
-# === 本地调试入口 ===
+# 本地快速测试代码
 if __name__ == "__main__":
-    print(generate_security_report("test_virus.exe", 0.98, True))
-    print("-" * 30)
-    print(generate_security_report("test_safe.exe", 0.01, False))
+    '''print("--- 测试白样本 ---")
+    print(generate_security_report("safe_app.exe", 0.1234, False))
+    '''
+    print("\n--- 测试黑样本 ---")
+    print(generate_security_report("1.ole", 0.9876, True))

@@ -131,12 +131,20 @@ def check_status(sample_id: str, db: Session = Depends(get_db)):
     }
     
     # 如果分析完成，把分数和 DeepSeek (或本地 Mock) 报告一起查出来返回给前端
+    # 如果分析完成，把分数和 DeepSeek 报告一起查出来返回给前端
     if sample.status == "completed":
         result = db.query(models.DetectionResult).filter(models.DetectionResult.sample_id == sample.id).first()
         report = db.query(models.AnalysisReport).filter(models.AnalysisReport.sample_id == sample.id).first()
         
-        if result and report:
+        # 分开判断，确保哪怕报告丢了，分数也能传过去
+        if result:
             response_data["malicious_score"] = result.malicious_score
+        else:
+            response_data["malicious_score"] = 0.0
+            
+        if report:
             response_data["llm_summary"] = report.llm_summary
+        else:
+            response_data["llm_summary"] = "⚠️ **报告缺失**：该文件属于系统早期分析的历史缓存，当时未生成大模型报告。请略微修改文件内容（或修改文件名）后重新上传，以触发全新的分析流程。"
 
     return response_data

@@ -147,18 +147,20 @@
         function renderResult(data) {
             document.getElementById('result-container').classList.remove('hidden');
             
-            // 渲染打分并根据危险程度变色
+            // 防崩溃处理：如果后端没传分数，默认为 0
             const scoreDisplay = document.getElementById('score-display');
-            const score = data.malicious_score;
-            scoreDisplay.innerText = score.toExponential(4); // 科学计数法显示极小值
+            const score = data.malicious_score !== undefined ? data.malicious_score : 0.0;
+            
+            scoreDisplay.innerText = score.toExponential(4); // 现在绝对不会崩溃了
             if(score > 0.5) {
                 scoreDisplay.classList.remove('text-green-600');
                 scoreDisplay.classList.add('text-red-600');
             }
 
-            // 使用 Marked.js 渲染 Markdown 报告
+            // 防崩溃处理：如果后端没传报告，给个默认提示
             const reportContainer = document.getElementById('report-content');
-            reportContainer.innerHTML = marked.parse(data.llm_summary);
+            const summaryText = data.llm_summary ? data.llm_summary : "暂无分析报告。";
+            reportContainer.innerHTML = marked.parse(summaryText);
         }
 
         function showError(msg) {

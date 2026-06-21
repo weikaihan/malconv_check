@@ -1,18 +1,14 @@
 # worker.py
 import time
 import models
-# 1. 关键修复：导入数据库连接池
 from database import SessionLocal 
 from malconv_inference import predict_is_malware
 from llm_evaluator import generate_security_report
+from feature_extractor import extract_pe_evidence
 
-# 2. 关键修复：去掉了 async，去掉了 db_session 参数
 def background_analysis_task(sample_id: str, file_path: str):
-    # 3. 关键修复：Worker 自己创建专属的数据库连接
     db_session = SessionLocal() 
-    
     try:
-        # 替换斜杠，防止 Windows 路径转义 bug
         safe_file_path = file_path.replace("\\", "/")
         
         # 更新状态为分析中
@@ -20,12 +16,9 @@ def background_analysis_task(sample_id: str, file_path: str):
         sample.status = "analyzing"
         db_session.commit()
 
+        # 1. 跑深度学习模型打分
         print(f"[{sample_id}] 正在执行 MalConv 原始字节深度学习检测...")
-        
-        # 避开杀软锁定
-        time.sleep(0.5)
-
-        # 执行底层推演
+        time.sleep(0.5) # 避开杀软锁定
         result_dict = predict_is_malware(safe_file_path) 
         
         detection_result = models.DetectionResult(
@@ -34,12 +27,26 @@ def background_analysis_task(sample_id: str, file_path: str):
         )
         db_session.add(detection_result)
         
-        # 执行 LLM 生成
+        # ==========================================
+        # 🟢 性能优化：按需解剖 PE 特征
+        # ==========================================
+        pe_evidence = None
+        if result_dict['is_malware']:
+            print(f"[{sample_id}] ⚠️ 触发高危告警！正在提取 PE 文件静态特征铁证...")
+            pe_evidence = extract_pe_evidence(safe_file_path)
+        else:
+            print(f"[{sample_id}] ✅ 判定为安全文件，已跳过 PE 解剖与特征提取。")
+
+        # 3. 生成最终报告 
+        # (如果 is_malware 为 False，llm_evaluator 内部会直接短路返回，不消耗 API)
+        print(f"[{sample_id}] 正在生成分析报告...")
         llm_summary_text = generate_security_report(
             file_name=result_dict['file_name'],
             malicious_score=result_dict['malicious_score'],
-            is_malware=result_dict['is_malware']
+            is_malware=result_dict['is_malware'],
+            pe_evidence=pe_evidence  # 安全文件传的是 None，恶意文件传的是铁证字典
         )
+        
         report = models.AnalysisReport(
             sample_id=sample.id,
             llm_summary=llm_summary_text
@@ -52,10 +59,7 @@ def background_analysis_task(sample_id: str, file_path: str):
         print(f"[{sample_id}] 分析圆满完成！")
         
     except Exception as e:
-        # 【关键修复】如果报错是因为数据库自身引起的，必须先回滚洗清异常状态，否则接下来的 query 会引发二次崩溃！
         db_session.rollback()
-        
-        # 发生错误时，将状态改写为 failed
         sample = db_session.query(models.Sample).filter(models.Sample.id == sample_id).first()
         if sample:
             sample.status = "failed"
@@ -63,5 +67,4 @@ def background_analysis_task(sample_id: str, file_path: str):
         print(f"❌ 样本 {sample_id} 分析失败: {str(e)}")
         
     finally:
-        # 4. 关键修复：无论分析成功还是报错，最后必须关闭数据库连接，防止内存泄漏！
         db_session.close()
